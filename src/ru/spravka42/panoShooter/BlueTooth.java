@@ -36,25 +36,17 @@ public class BlueTooth {
 	public String connect() {
 		bt = BluetoothAdapter.getDefaultAdapter();
 		if (bt == null) return "no adapter";
-		if (!bt.isEnabled()) {
-		    //Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-		    //startActivityForResult(enableBtIntent, 1);
-		}
 		
 		Set<BluetoothDevice> pairedDevices = bt.getBondedDevices();
-		// If there are paired devices
-		String deviceAddress = null;
 		if (pairedDevices.size() > 0) {
 		    // Loop through paired devices
 		    for (BluetoothDevice device : pairedDevices) {
 		        if (device.getName().equalsIgnoreCase("PapyMerlin")) {
-		        	//deviceAddress = device.getAddress();
 		        	this.device = device;
 		        }
 		    }
 		    
 		}
-		//device = bt.getRemoteDevice(deviceAddress);
 		if (device == null) return "no device";
 		
 		final UUID spp_uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
@@ -85,21 +77,10 @@ public class BlueTooth {
     public String sendCommand(String cmd) {
         String command = ":"+cmd+"\r";
         String response = "";
-        //byte[] bResponse = null;
         byte[] bCmd = command.getBytes();
         try {
-        	Log.i("sendCommand", "in sendCommand");
+        	//Log.i("sendCommand", "in sendCommand");
 			out.write(bCmd);
-//			out.flush();
-//			Thread.sleep(100);
-			//int b = 0;
-			//String resp = "";
-//			while (true) {
-//				b = in.read();
-//				Log.i("sendCommand", "Byte: "+b);
-//				if (b == -1) break;
-//				Thread.sleep(1);
-//			}
 			Thread.sleep(100);
 			int bytes = in.read(buffer);
 			String ReadBuffer = new String(buffer, 0, bytes);
@@ -107,11 +88,11 @@ public class BlueTooth {
 			if (m.find()) {
 				response = m.group(1);
 			}
-			Log.i("sendCommand", new String(bCmd));
-			Log.i("sendCommand", new String(ReadBuffer));
-			Log.i("sendCommand", response);
+			//Log.i("sendCommand", new String(bCmd));
+			//Log.i("sendCommand", new String(ReadBuffer));
+			//Log.i("sendCommand", response);
 		} catch (Exception e) {
-			Log.i("sendCommand", "got an exception: " + e);
+			//Log.i("sendCommand", "got an exception: " + e);
 			return e.getMessage();
 		}
         return response;

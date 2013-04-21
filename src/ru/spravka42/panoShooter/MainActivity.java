@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
 	private ProgressBar pbProgress;
 	private Preset preset;
 	private Head head;
+	private boolean connected = false;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,19 +72,37 @@ public class MainActivity extends Activity {
         return true;
     }
     
+//    public void onBackPressed() {
+//    	
+//    }
+    
     public void Connect(View v) {
+    	
+    	if (connected) {
+    		if (shootTask != null) shootTask.cancel(true);
+    		head.stop();
+    		Button btnConnect = (Button)findViewById(R.id.btnConnect);
+    		btnConnect.setText("Connect");
+    		connected = false;
+    	}
+    	
+    	Button btnConnect = (Button)findViewById(R.id.btnConnect);
+    	btnConnect.setEnabled(false);
     	head = new Head();
     	String _status = head.init();
     	if (_status != "ok") {
     		tvProgress.setText(_status);
+    		btnConnect.setEnabled(true);
     		return;
     	}
-    	//tvProgress.setText("Press shoot");
+    	connected = true;
+    	tvProgress.setText("Press shoot");
     	Button btnShoot = (Button)findViewById(R.id.btnShoot);
     	btnShoot.setEnabled(true);
-    	Button btnConnect = (Button)findViewById(R.id.btnConnect);
-    	btnConnect.setEnabled(false);
+    	btnConnect.setEnabled(true);
+    	btnConnect.setText("Stop");
     }
+    
     
     private class ShootTask extends AsyncTask<Void, Integer, Void> {
 		protected Void doInBackground(Void... params) {
@@ -91,6 +110,7 @@ public class MainActivity extends Activity {
 			int currentShoot = 0;
 			publishProgress(currentShoot, shootsCount);
 			for (Shoot shoot : preset.shoots) {
+				if (isCancelled()) break;
 	    		currentShoot++;
 	            head.driveTo(shoot.getYaw(), shoot.getPitch());
 	            head.shoot();
@@ -113,14 +133,17 @@ public class MainActivity extends Activity {
             pbProgress.setProgress(progress[0]);
 		}
 		
-		protected void onCancelled(Void... result) {
-			head.stop();
-		}
+//		@SuppressWarnings("unused")
+//		protected void onCancelled(Void... result) {
+//			head.stop();
+//		}
     	
     }
     
+    private ShootTask shootTask = null;
     public void Shoot(View v) {		
-		new ShootTask().execute();
+		shootTask = new ShootTask();
+		shootTask.execute();
     }
     
 }
