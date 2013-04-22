@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<papywizard>
+	<preset name="My D3100 preset">
+		<tooltip>
+			18 мм на APS-C (x1.6)
+			Нодальная точка - 23мм(1 мм перед кольцом) от поверхности объектива (22мм при 25мм)
+			Всего кадров: 53:
+				8 снимков на 70 градусов c шагом 45
+				15 снимков на 35 градусов c шагом 24
+				15 снимков на 0 градусов c шагом 24
+				15 снимков на -40 градусов c шагом 24
+			После съемки желательно снять надир (пол)
+		</tooltip>
+		<shoot>
+			<!-- ROW 1 -->
+			<pict yaw="0" pitch="70" />
+			<pict yaw="45" pitch="70" />
+			<pict yaw="90" pitch="70" />
+			<pict yaw="135" pitch="70" />
+			<pict yaw="180" pitch="70" />
+			<pict yaw="225" pitch="70" />
+			<pict yaw="270" pitch="70" />
+			<pict yaw="315" pitch="70" />
+			
+			<!-- ROW 2 -->
+			<pict yaw="336" pitch="35" />
+			<pict yaw="312" pitch="35" />
+			<pict yaw="288" pitch="35" />
+			<pict yaw="264" pitch="35" />
+			<pict yaw="240" pitch="35" />
+			<pict yaw="216" pitch="35" />
+			<pict yaw="192" pitch="35" />
+			<pict yaw="168" pitch="35" />
+			<pict yaw="144" pitch="35" />
+			<pict yaw="120" pitch="35" />
+			<pict yaw="96" pitch="35" />
+			<pict yaw="72" pitch="35" />
+			<pict yaw="48" pitch="35" />
+			<pict yaw="24" pitch="35" />
+			<pict yaw="0" pitch="35" />
+			
+			<!-- ROW 3 -->
+			<pict yaw="0" pitch="0" />
+			<pict yaw="24" pitch="0" />
+			<pict yaw="48" pitch="0" />
+			<pict yaw="72" pitch="0" />
+			<pict yaw="96" pitch="0" />
+			<pict yaw="120" pitch="0" />
+			<pict yaw="144" pitch="0" />
+			<pict yaw="168" pitch="0" />
+			<pict yaw="192" pitch="0" />
+			<pict yaw="216" pitch="0" />
+			<pict yaw="240" pitch="0" />
+			<pict yaw="264" pitch="0" />
+			<pict yaw="288" pitch="0" />
+			<pict yaw="312" pitch="0" />
+			<pict yaw="336" pitch="0" />
+			
+			<!-- ROW 4 -->
+			<pict yaw="336" pitch="-40" />
+			<pict yaw="312" pitch="-40" />
+			<pict yaw="288" pitch="-40" />
+			<pict yaw="264" pitch="-40" />
+			<pict yaw="240" pitch="-40" />
+			<pict yaw="216" pitch="-40" />
+			<pict yaw="192" pitch="-40" />
+			<pict yaw="168" pitch="-40" />
+			<pict yaw="144" pitch="-40" />
+			<pict yaw="120" pitch="-40" />
+			<pict yaw="96" pitch="-40" />
+			<pict yaw="72" pitch="-40" />
+			<pict yaw="48" pitch="-40" />
+			<pict yaw="24" pitch="-40" />
+			<pict yaw="0" pitch="-40" />
+		</shoot>
+	</preset>
+</papywizard>
