@@ -127,7 +127,9 @@ public class MainActivity extends Activity {
 			}
 			if (progress[0] == progress[1]) {
 				Button btnShoot = (Button)findViewById(R.id.btnShoot);
+				Button btnConnect = (Button)findViewById(R.id.btnConnect);
 		    	btnShoot.setEnabled(true);
+		    	btnConnect.setText("Connect");
 			}
 			tvProgress.setText(progress[0]+"/"+progress[1]);
             pbProgress.setProgress(progress[0]);
