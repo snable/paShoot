@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import ru.spravka42.panoShooter.R;
 
 import android.widget.ArrayAdapter;
-
-public class MainActivity extends Activity {
+ 
+public class MainActivity extends Activity { 
 
 	public TextView tvProgress;
-	private ListView lstPresets;
+	private ListView lstPresets; 
 	private ProgressBar pbProgress;
 	private Preset preset;
-	private Head head;
+	private Head head; 
 	private boolean connected = false;
 	
     @Override
@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         ArrayList<String> presets = new ArrayList<String>();
         
         File sdcard = Environment.getExternalStorageDirectory();
-        String path = sdcard.getAbsolutePath() + "/panoShoot/preset.xml";
+        String path =  sdcard.getAbsolutePath() + "/panoShoot/preset.xml";
         try {
 			PresetParser parser = new PresetParser();
 			ArrayList<Shoot> shoots = parser.parse(new FileInputStream(path));

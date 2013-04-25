@@ -3,8 +3,7 @@
 
     <string name="app_name">panoShooter</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="connect">Connect</string>
     <string name="shoot">Shoot!</string>
 
-</resources>
+</resources> 

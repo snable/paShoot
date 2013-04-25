@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">ПаноШутер</string>
+    <string name="action_settings">Настройки</string>
     <string name="connect">Подключиться</string>
     <string name="shoot">Сфоткать!</string>
 </resources>
