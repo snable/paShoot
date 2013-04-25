@@ -1,7 +1,7 @@
 # Android application for shooting panoramas
 
 ### Installation notes:
-* Put your preset file in {sdcard_dir}/panoShooter/
+* Put your preset file in {sdcard_dir}/panoShoot/
 * Rename it to "preset.xml"
 * File format is PapyWizard preset XML
 * Install APK (You can use one from "APK" folder)
