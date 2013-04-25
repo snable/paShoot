@@ -52,9 +52,11 @@ public class MainActivity extends Activity {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			tvProgress.setText("File not found");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			tvProgress.setText("Cant read preset file");
 		}
         
         
