@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package ru.spravka42.panoShooter;
+package ru.spravka42.paShoot;
 
 public final class R {
     public static final class attr {

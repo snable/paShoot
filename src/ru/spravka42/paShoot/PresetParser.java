@@ -1,4 +1,4 @@
-package ru.spravka42.panoShooter;
+package ru.spravka42.paShoot;
 
 import java.io.IOException;
 import java.io.InputStream;

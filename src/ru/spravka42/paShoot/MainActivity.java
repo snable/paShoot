@@ -1,4 +1,4 @@
-package ru.spravka42.panoShooter;
+package ru.spravka42.paShoot;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import ru.spravka42.panoShooter.R;
+import ru.spravka42.paShoot.R;
 
 import android.widget.ArrayAdapter;
  
@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         ArrayList<String> presets = new ArrayList<String>();
         
         File sdcard = Environment.getExternalStorageDirectory();
-        String path =  sdcard.getAbsolutePath() + "/panoShoot/preset.xml";
+        String path =  sdcard.getAbsolutePath() + "/paShoot/preset.xml";
         try {
 			PresetParser parser = new PresetParser();
 			ArrayList<Shoot> shoots = parser.parse(new FileInputStream(path));
